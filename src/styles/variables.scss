@@ -1,0 +1,59 @@
+//colors
+$colorWhite: #FFFFFF;
+$colorGrey: #838383;
+$colorGreyLight: #B7B7B7;
+$colorDark: #292D32;
+$colorBackgroundGray: #F2F2F2;
+$colorBackgroundDark: #343A41;
+$colorYellow: #fcd809;
+$colorVioletLight: #EFEEF6;
+$colorViolet: #9E98DC;
+//sizes
+$sizeDesctop: 1180px;
+$sizeIpad: 800px;
+$sizeMobile: 600px;
+$sizeSmall: 480px;
+
+$shadow: 6px 6px 30px 0px rgba(0, 0, 0, 0.06);
+
+@mixin fontStyle($size: 16, $height: normal, $weight: 400, $color: $colorDark){
+	font-size: $size;
+	line-height: $height;
+	font-weight: $weight;
+	color: $color;
+}
+
+@mixin width-height($width, $height: $width){
+	width: $width;
+	height: $height;
+}
+
+@mixin borderStyle ($border, $borderRadius){
+	border: $border;
+	border-radius: $borderRadius;
+}
+
+@mixin flex-grid ($display, $direction, $justify, $align){
+	display: $display;
+	flex-direction: $direction;
+	justify-content: $justify;
+	align-items: $align;
+}
+
+@mixin blockCenter {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+@mixin blockColumnCenter {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+@mixin textCenter {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}

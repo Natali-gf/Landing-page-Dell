@@ -1,0 +1,26 @@
+// @import './variables.scss';
+
+* {
+	font-family: 'Roboto', Arial, Helvetica, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+	max-width: 1400px;
+	margin: auto;
+
+	// @media screen and (max-width: $sizeIpad) {
+	// 	padding: 0 15px;
+	// }
+}
+
+.title {
+	@include fontStyle(50px, 50px);
+}
+
+.description {
+	@include fontStyle(18px, 24px, 300, $colorGrey);
+}
+
+.hidden {
+	display: none;
+}
