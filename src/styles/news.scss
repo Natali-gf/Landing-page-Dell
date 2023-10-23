@@ -1,0 +1,96 @@
+.news {
+	margin-bottom: 180px;
+	&__block {
+		display: flex;
+		justify-content: space-between;
+		&_text {
+			max-width: 721px;
+		}
+	}
+	&__go-link {
+		display: flex;
+		align-items: center;
+		&_icon {
+			margin-left: 20px;
+		}
+	}
+	&__description {
+		margin: 25px 0 69px;
+	}
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 64px;
+	}
+}
+
+.article {
+	display: grid;
+	@include width-height(415px, 364px);
+	border-radius: 40px 0 40px 0;
+	box-shadow: $shadow;
+	grid-template-columns: 30px 268px 92px 25px;
+	grid-template-rows: 64px 97px 57px 24px 64px 11px 21px 26px;
+	grid-template-areas:
+		'.	.	.	.'
+		'.	.	. date'
+		'.	.	.	.'
+		'.	.	link link'
+		'. title link link'
+		'.	.		.	.'
+		'. descr descr descr';
+	&:nth-child(1) {
+		background: url('/src/assets/images/block_base.png') bottom 0 left 0 no-repeat,
+					url('/src/assets/images/article_01.png') no-repeat;
+	}
+	&:nth-child(2) {
+		background: url('/src/assets/images/block_base.png') bottom 0 left 0 no-repeat,
+					url('/src/assets/images/article_02.png') no-repeat;
+	}
+	&:nth-child(3) {
+		background: url('/src/assets/images/block_base.png') bottom 0 left 0 no-repeat,
+					url('/src/assets/images/article_03.png') no-repeat;
+	}
+	&:nth-child(4) {
+		background: url('/src/assets/images/block_base.png') bottom 0 left 0 no-repeat,
+					url('/src/assets/images/article_04.png') no-repeat;
+	}
+	&:nth-child(5) {
+		background: url('/src/assets/images/block_base.png') bottom 0 left 0 no-repeat,
+					url('/src/assets/images/article_05.png') no-repeat;
+	}
+	&:nth-child(6) {
+		background: url('/src/assets/images/block_base.png') bottom 0 left 0 no-repeat,
+					url('/src/assets/images/article_06.png') no-repeat;
+	}
+	&__date {
+		grid-area: date;
+		background-color: $colorWhite;
+		margin-right: -25px;
+		border-radius: 15px;
+		@include textCenter;
+		flex-wrap: wrap;
+		padding: 24px 5px;
+		box-shadow: $shadow;
+		@include fontStyle(20px, normal, 900);
+		&_month {
+			@include fontStyle(10px, normal, 300);
+		}
+	}
+	&__title {
+		grid-area: title;
+		@include fontStyle(25px, 130%, 700);
+	}
+	&__description {
+		grid-area: descr;
+		@include fontStyle(14px, 150%);
+	}
+	&__link {
+		grid-area: link;
+		&_img {
+			display: block;
+			margin-top: 15px;
+			margin-left: 9px;
+		}
+	}
+}

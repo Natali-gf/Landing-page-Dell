@@ -21,6 +21,16 @@
 	@include fontStyle(18px, 24px, 300, $colorGrey);
 }
 
+.go-link {
+	@include blockCenter;
+	@include width-height(55px);
+	background-color: $colorBlue;
+	border-radius: 50%;
+	&::before {
+		content: url('/src/assets/icons/arrow.svg');
+	}
+}
+
 .hidden {
 	display: none;
 }

@@ -1,0 +1,85 @@
+.advantages {
+	background-color: $colorBackgroundGray;
+	background-image: url('/src/assets/images/best_quality.png');
+	background-repeat: no-repeat;
+	background-position: 0 152px;
+	height: 962px;
+	margin-bottom: 172px;
+	&__container {
+
+	}
+	&__block {
+		display: flex;
+	}
+	&__text-block {
+		@include flex-grid(flex, column, center, null);
+		margin-left: -80px;
+	}
+	&__image {
+		margin: 87px 0 0 -80px;
+	}
+	&__description {
+		margin: 37px 0 41px;
+	}
+	&__go-link {
+		display: flex;
+		align-items: center;
+		&_icon {
+			margin-right: 20px;
+		}
+	}
+	&__list {
+		display: flex;
+		gap: 27px;
+		margin: 48px 0 46px;
+	}
+	&__item {
+		background-color: $colorDark;
+		border-radius: 18px;
+		background-image: url('/src/assets/icons/vector_line.svg');
+		background-repeat: no-repeat;
+		background-position: right 0;
+	}
+}
+
+.advantage {
+	@include width-height(330px, 289px);
+	padding: 30px;
+	&__icon {
+		background-color: $colorBackgroundDark;
+		border-radius: 10px;
+		@include width-height(70px);
+		@include blockCenter;
+		margin-bottom: 25px;
+	}
+	&__title {
+		@include fontStyleEuclid(22px, normal, 700, $colorWhite);
+		margin-bottom: 13px;
+	}
+	&__description {
+		@include fontStyleEuclid(16px, normal, 300, $colorGrey);
+	}
+}
+
+.icon {
+	&_card {
+		&::before {
+			content: url('/src/assets/icons/card.svg');
+		}
+	}
+	&_setting {
+		&::before {
+			content: url('/src/assets/icons/settings.svg');
+		}
+	}
+	&_people {
+		&::before {
+			content: url('/src/assets/icons/people.svg');
+		}
+	}
+	&_cube {
+		&::before {
+			content: url('/src/assets/icons/cube.svg');
+		}
+	}
+}

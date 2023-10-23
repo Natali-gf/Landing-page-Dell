@@ -1,8 +1,136 @@
 .header {
+	height: 123px;
+	display: flex;
+	justify-content: space-between;
+	&__main-menu {
+		display: flex;
+		align-items: center;
+	}
 	&__logo {
 		background-image: url('/src/assets/icons/logo.svg');
 		width: 70px;
 		height: 70px;
 		background-repeat: no-repeat;
+	}
+	&__search {
+		&::before {
+			content: url('/src/assets/icons/search.svg');
+		}
+	}
+}
+
+.navigation {
+	&__list {
+		height: 100%;
+		display: flex;
+		gap: 45px;
+		margin: 0 50px 0 60px;
+	}
+}
+
+.menu {
+	display: flex;
+	align-items: center;
+	gap: 30px;
+	// padding: 37px 0;
+	height: 100%;
+	&__signal,
+	&__favorite,
+	&__cart,
+	&__burger {
+		width: 49px;
+		height: 49px;
+		background-color: $colorBackgroundGrayLight;
+		border-radius: 50%;
+		@include blockCenter;
+		cursor: pointer;
+		&::before {
+			@include blockCenter;
+			width: 24px;
+			height: 24px;
+		}
+	}
+	&__signal {
+		&::before {
+			content: url('/src/assets/icons/signal.svg');
+		}
+	}
+	&__favorite {
+		&::before {
+			content: url('/src/assets/icons/favorite.png');
+		}
+	}
+	&__cart {
+		&::before {
+			content: url('/src/assets/icons/bag.svg');
+		}
+	}
+	&__burger {
+		display: none;
+		&::before {
+			content: url('/src/assets/icons/menu.svg');
+		}
+	}
+}
+
+.profile {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	position: relative;
+	&__icon {
+		width: 49px;
+		height: 49px;
+		background-color: $colorBackgroundGrayLight;
+		border-radius: 50%;
+		@include blockCenter;
+		&::before {
+			@include blockCenter;
+			width: 24px;
+			height: 24px;
+			content: url('/src/assets/icons/profile.svg');
+		}
+	}
+	&__user {
+		margin-right: 20px;
+	}
+	&__list {
+		position: absolute;
+		top: 85px;
+		right: 0;
+		margin-right: -180px;
+		display: none;
+		width: 405px;
+		flex-direction: column;
+		background-color: $colorWhite;
+		border-radius: 20px;
+		box-shadow: $shadow;
+		&::before {
+			content: url("data: image/svg+xml, %3Csvg width='26' height='24' viewBox='0 0 26 24' fill='none' xmlns='http://www.w3.org/2000/svg' %3E%3Crect width='18' height='18' rx='2' transform='matrix(0.732099 0.681198 -0.732099 0.681198 12.7432 0)' fill='white' /%3E%3C/svg%3E%0A");
+			background-color: transparent;
+			@include blockCenter;
+			@include width-height(18px);
+			margin: -9px auto 0;
+		}
+	}
+	&__item {
+		@include fontStyle(20px, 30px);
+		padding: 20px 30px;
+		&:not(&:first-child) {
+			border-top: 1px solid $colorBackgroundGray;
+		}
+		&:first-child {
+			padding: 30px;
+			display: flex;
+			align-items: center;
+			&>.profile__icon {
+				margin-right: 20px;
+			}
+		}
+	}
+	&:hover {
+		.profile__list {
+			display: flex;
+		}
 	}
 }

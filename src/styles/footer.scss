@@ -1,0 +1,51 @@
+.footer {
+	&__container {
+		display: flex;
+		flex-direction: column;
+
+	}
+	&__links {
+		display: flex;
+		gap: 180px;
+		margin-top: 60px;
+	}
+	&__logo {
+		margin-right: 10px;
+		&::before {
+			content: url('/src/assets/icons/logo.svg');
+			@include width-height(112px);
+		}
+	}
+	&__list {
+		@include fontStyle(25px, normal);
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+	&__item {
+		@include fontStyle(16px, normal, 300);
+	}
+	&__line {
+		border: 1px solid #E5E5E5;
+		width: 100%;
+		height: 1px;
+		margin: 60px 0 40px;
+	}
+	&__contacts {
+		display: flex;
+		gap: 153px;
+		margin-bottom: 40px;
+	}
+	&__block {
+		&_socials {
+			display: flex;
+			gap: 18px;
+		}
+	}
+	&__title {
+		@include fontStyle(16px, 133%, 400, $colorGreyDark)
+	}
+	&__text {
+		@include fontStyle(18px, 150%, 400, $colorDark)
+	}
+}

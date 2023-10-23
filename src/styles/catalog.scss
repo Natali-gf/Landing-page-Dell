@@ -1,0 +1,64 @@
+.catalog {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 40px;
+	&__block {
+		@include width-height(440px, 371px);
+		padding-right: 50px;
+	}
+	&__title {
+		margin-bottom: 29px;
+	}
+	&__description {
+		margin-bottom: 46px;
+	}
+	&__go-link {
+		margin-right: 12px;
+		display: flex;
+		align-items: center;
+		&_icon {
+			margin-right: 12px;
+		}
+	}
+	&__section {
+		@include width-height(440px, 371px);
+		background-color: $colorBackgroundGray;
+		border-radius: 20px;
+		padding: 40px;
+	}
+}
+
+.section {
+	display: grid;
+	grid-template-rows: 38px 176px 24px 38px;
+	gap: 5px;
+	margin-bottom: 180px;
+	&__number {
+		@include fontStyle(25px, 150%, 100, $colorGreyDark);
+	}
+	&__image {
+		display: flex;
+		&_laptop {
+			margin: -90px 0 0 -30px;
+		}
+		&_pc {
+			margin: -90px auto 0;
+		}
+		&_server {
+			margin: 0 auto;
+		}
+		&_emc {
+			margin: -24px auto 0;
+		}
+		&_emc-parts {
+			margin: -43px auto 0;
+		}
+	}
+	&__count-goods {
+		@include fontStyle(18px, 24px, 300, $colorGreyDark);
+	}
+	&__title {
+		@include fontStyle(25px, 150%);
+		justify-self: flex-start;
+	}
+}
