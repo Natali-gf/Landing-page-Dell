@@ -6,72 +6,98 @@
 	<title>Dell</title>
 </head>
 <body>
-	<header class="header container">
-		<div class="header__main-menu">
-			<div class="header__logo"></div>
-			<nav class="header__navigation navigation">
-				<ul class="navigation__list">
-					<li class="navigation__item">
-						<a class="navigation__link" href="#">Главная</a>
-					</li>
-					<li class="navigation__item">
-						<a class="navigation__link" href="#">Каталог</a>
-					</li>
-					<li class="navigation__item">
-						<a class="navigation__link" href="#">Новости</a>
-					</li>
-					<li class="navigation__item">
-						<a class="navigation__link" href="#">Наш АСЦ</a>
-					</li>
-					<li class="navigation__item">
-						<a class="navigation__link" href="#">Контакты</a>
-					</li>
-				</ul>
-			</nav>
-			<div class="header__search"></div>
-		</div>
-		<div class="menu">
-			<div class="menu__profile profile">
-				<div class="profile__user">Мария</div>
-				<div class="profile__icon"></div>
-				<ul class="profile__list">
-					<li class="profile__item profile__item_user">
-						<div class="profile__icon"></div>
-						<a href="#" class="profile__link">
-							Мария
-						</a>
-					</li>
-					<li class="profile__item">
-						<a href="#" class="profile__link">
-							Личный кабинет
-						</a>
-					</li>
-					<li class="profile__item">
-						<a href="#" class="profile__link">
-							История заказов
-						</a>
-					</li>
-					<li class="profile__item">
-						<a href="#" class="profile__link">
-							Персональные предложения
-						</a>
-					</li>
-					<li class="profile__item">
-						<a href="#" class="profile__link">
-							Выйти
-						</a>
-					</li>
-				</ul>
+	<header class="header">
+		<div class="header__container container">
+			<div class="header__main-menu">
+				<div class="header__logo"></div>
+				<nav class="header__navigation navigation">
+					<ul class="navigation__list">
+						<li class="navigation__item">
+							<a class="navigation__link"
+							   href="#">Главная</a>
+						</li>
+						<li class="navigation__item">
+							<a class="navigation__link"
+							   href="#">Каталог</a>
+						</li>
+						<li class="navigation__item">
+							<a class="navigation__link"
+							   href="#">Новости</a>
+						</li>
+						<li class="navigation__item">
+							<a class="navigation__link"
+							   href="#">Наш АСЦ</a>
+						</li>
+						<li class="navigation__item">
+							<a class="navigation__link"
+							   href="#">Контакты</a>
+						</li>
+					</ul>
+				</nav>
+				<div class="header__search"></div>
 			</div>
-			<div class="menu__signal"></div>
-			<div class="menu__favorite"></div>
-			<div class="menu__cart"></div>
-			<div class="menu__burger"></div>
+			<div class="header__menu menu">
+				<div class="menu__profile profile">
+					<div class="profile__user">Мария</div>
+					<div class="profile__icon"></div>
+					<ul class="profile__list">
+						<li class="profile__item profile__item_user">
+							<div class="profile__icon"></div>
+							<a href="#"
+							   class="profile__link"> Мария </a>
+						</li>
+						<li class="profile__item">
+							<a href="#"
+							   class="profile__link"> Личный кабинет </a>
+						</li>
+						<li class="profile__item">
+							<a href="#"
+							   class="profile__link"> История заказов </a>
+						</li>
+						<li class="profile__item">
+							<a href="#"
+							   class="profile__link"> Персональные предложения </a>
+						</li>
+						<li class="profile__item">
+							<a href="#"
+							   class="profile__link"> Выйти </a>
+						</li>
+					</ul>
+				</div>
+				<div class="menu__signal"></div>
+				<div class="menu__favorite"></div>
+				<div class="menu__cart"></div>
+				<div class="menu__burger"></div>
+			</div>
 		</div>
+		<nav class="header__navigation_burger navigation">
+			<ul class="navigation__list">
+				<li class="navigation__item">
+					<a class="navigation__link"
+					   href="#">Главная</a>
+				</li>
+				<li class="navigation__item">
+					<a class="navigation__link"
+					   href="#">Каталог</a>
+				</li>
+				<li class="navigation__item">
+					<a class="navigation__link"
+					   href="#">Новости</a>
+				</li>
+				<li class="navigation__item">
+					<a class="navigation__link"
+					   href="#">Наш АСЦ</a>
+				</li>
+				<li class="navigation__item">
+					<a class="navigation__link"
+					   href="#">Контакты</a>
+				</li>
+			</ul>
+		</nav>
 	</header>
 	<main>
 		<section class="slider"></section>
-		<section class="catalog container">
+		<section id="catalog" class="catalog container">
 			<div class="catalog__block">
 				<div class="catalog__title title">Каталог товаров от Dell</div>
 				<div class="catalog__description description">
@@ -129,8 +155,8 @@
 							Оптимизация мощностей (расходов, социальных выплат и т.п.) позволили компании на 4,7% понизить цены по сравнению с конкурентами
 						</div>
 						<div class="advantages__go-link">
-							<a class="advantages__go-link_icon go-link" href="#"></a>
-							<a class="advantages__go-link_text" href="#">
+							<a class="advantages__go-link_icon go-link" href="#feedback"></a>
+							<a class="advantages__go-link_text" href="#feedback">
 								Оставить заявку
 							</a>
 						</div>
@@ -304,30 +330,35 @@
 					<img class="connection__image"
 						 src="./assets/images/iphone.png" alt="iPhone">
 				</div>
-				<div class="connection__feedback feedback">
+				<div id="feedback" class="connection__feedback feedback">
 					<div class="feedback__title title">Оставьте заявку</div>
 					<div class="feedback__description">
 						Оставьте свой номер, и мы перезвоним Вам.
 					</div>
-					<form class="feedback__form form" action="">
+					<form id="form" class="feedback__form form" action="">
 						<label class="form__label"
 							   for="inputName">Ваше имя</label>
-						<input class="form__input"
-							   id="inputName" type="text">
+						<input class="form__input" name="name"
+							   id="inputName" type="text" autocomplete="off">
 						<label class="form__label"
 							   for="inputPhone">Номер телефона</label>
-						<input class="form__input"
-							   id="inputPhone" type="text">
+						<input class="form__input" name="phone"
+							   id="inputPhone" type="text" autocomplete="off">
 						<label class="form__label"
 							   for="inputComment">Комментарий</label>
 						<textarea class="form__textarea"
-								  id="inputComment"
+								  id="inputComment"  name="comment"
 								  cols="30" rows="5"></textarea>
 						<button class="form__button" type="submit">
 							<div class="form__button_icon go-link"></div>
 							<span class="form__button_text">Заказать</span>
 						</button>
+						<div class="form__error error">
+							<button class="error__button" type="button"></button>
+							<div class="error__text">sgshdhfdhsrt</div>
+						</div>
 					</form>
+
 				</div>
 			</div>
 		</section>
@@ -399,7 +430,10 @@
 				</div>
 				<div class="footer__block">
 					<div class="footer__title">Телефон</div>
-					<div class="footer__text">+7 495 737-06-01, +7 495 737-06-01</div>
+					<div class="footer__text">
+						<div class="footer__text_phone">+7 495 737-06-01,</div>
+						<div class="footer__text_phone">+7 495 737-06-01,</div>
+					</div>
 				</div>
 				<div class="footer__block_socials">
 					<div class="socials__facebook"></div>

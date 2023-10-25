@@ -7,18 +7,23 @@
 .container {
 	max-width: 1400px;
 	margin: auto;
-
-	// @media screen and (max-width: $sizeIpad) {
-	// 	padding: 0 15px;
-	// }
+	@media screen and (max-width: $sizeScreenLarge) {
+		padding: 0 15px;
+	}
 }
 
 .title {
 	@include fontStyle(50px, 50px);
+	@media screen and (max-width: $sizeScreenSmall) {
+		@include fontStyle(30px, 50px);
+	}
 }
 
 .description {
 	@include fontStyle(18px, 24px, 300, $colorGrey);
+	@media screen and (max-width: $sizeScreenSmall) {
+		@include fontStyle(15px, 150%, 400, $colorGrey);
+	}
 }
 
 .go-link {

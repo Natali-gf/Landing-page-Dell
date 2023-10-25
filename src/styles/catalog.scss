@@ -2,6 +2,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	gap: 40px;
+	margin: 164px auto 180px;
 	&__block {
 		@include width-height(440px, 371px);
 		padding-right: 50px;
@@ -26,13 +27,15 @@
 		border-radius: 20px;
 		padding: 40px;
 	}
+	@media screen and (max-width: $sizeScreenLarge) {
+		justify-content: center;
+	}
 }
 
 .section {
 	display: grid;
 	grid-template-rows: 38px 176px 24px 38px;
 	gap: 5px;
-	margin-bottom: 180px;
 	&__number {
 		@include fontStyle(25px, 150%, 100, $colorGreyDark);
 	}

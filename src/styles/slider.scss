@@ -1,3 +1,183 @@
 .slider {
-	height: 683px;
+	position: relative;
+	z-index: 0;
+	display: grid;
+	grid-template-columns: 1fr 1165px 249px 1fr;
+	grid-template-rows: 1fr;
+	grid-template-areas:
+		'. main secondary secondary';
+	background: linear-gradient(to right, $colorBackgroundGray 70%, $colorBackgroundGrayLight 30%);
+	&__main {
+		grid-area: main;
+		height: 100%;
+		background: url('/src/assets/images/Dell.png') top 97px left 0 no-repeat, $colorBackgroundGray;
+		display: grid;
+		grid-template-columns: 39px 105px 404px 557px 20px 40px;
+		grid-template-rows: 253px 24px 15px 118px 60px 55px 158px;
+		grid-template-areas:
+			' .		 . . 	 image .    .'
+			' . 	 . descr image .    .'
+			' .		 . .	 image .    .'
+			' scroll . title image .    .'
+			' scroll . . 	 image .    .'
+			' scroll . link  image dots dots'
+			' . 	 . . 	 image .    .';
+		z-index: 1;
+	}
+	&__secondary {
+		grid-area: secondary;
+		background-color: $colorBackgroundGrayLight;
+		position: relative;
+		display: grid;
+		grid-template-columns: 40px 181px 28px 1fr;
+		grid-template-rows: 321px 96px 63px 203px;
+		grid-template-areas:
+			'img img img img'
+			'img img img img'
+			'img img img img'
+			'. subtitle . .';
+		&_image {
+			grid-area: img;
+			display: block;
+			margin-top: -240px;
+			margin-left: -185px;
+			height: 150%;
+			position: relative;
+		}
+		&_text {
+			grid-area: subtitle;
+			@include fontStyle(25px, 130%);
+			margin-top: -159px;
+			position: absolute;
+			z-index: 3;
+		}
+		&_back {
+			grid-area: img;
+			position: relative;
+			width: 100%;
+			height: 100%;
+			background: hwb(0 98% 2% / 0.5);
+			z-index: 2;
+		}
+	}
+	&__title {
+		grid-area: title;
+	}
+	&__description {
+		grid-area: descr;
+	}
+	&__go-link {
+		grid-area: link;
+		display: flex;
+		align-items: center;
+		&_icon {
+			margin-right: 12px;
+		}
+	}
+	&__scroll {
+		grid-area: scroll;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		&_link {
+			rotate: 270deg;
+			white-space: nowrap;
+			display: flex;
+			align-items: center;
+			&::before {
+				content: url('/src/assets/icons/scroll.svg');
+				display: block;
+				@include width-height(25px, 39px);
+				rotate: 90deg;
+				margin: 0 20px 0 10px;
+				cursor: pointer;
+			}
+		}
+	}
+	&__image {
+		grid-area: image;
+		margin-top: 74px;
+	}
+	&__switch {
+		grid-area: dots;
+		@include flex-grid(flex, null, flex-end, center);
+		margin-right: -145px;
+		gap: 80px;
+		&_arrow {
+			grid-area: arrow;
+			cursor: pointer;
+			&::before {
+				content: url('/src/assets/icons/arrow_slider.svg');
+				display: block;
+				cursor: pointer;
+			}
+		}
+		&_dots {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+		}
+	}
+	@media screen and (max-width: $sizeScreenLarge) {
+		display: flex;
+		flex-direction: column;
+		&__secondary {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 100%;
+			height: 480px;
+			&_image {
+				margin: 0;
+				height: 100%;
+				position: absolute;
+				right: 0;
+			}
+			&_text {
+				margin-top: 0;
+				max-width: 181px;
+				padding: 0 15px;
+			}
+			&_back {
+				position: absolute;
+			}
+		}
+		&__switch {
+			margin: 150px 200px 0 0;
+		}
+	}
+	@media screen and (max-width: $sizeScreenLarge) {
+		&__main {
+			display: flex;
+			flex-direction: column;
+			padding: 0 15px;
+			background: url('/src/assets/images/Dell.png') top 18px left 32px no-repeat, $colorBackgroundGray;
+		}
+		&__image {
+			margin-top: 0;
+		}
+		&__description {
+			margin: 80px 0 5px;
+		}
+		&__go-link {
+			margin: 28px 10px;
+		}
+		&__scroll {
+			display: none;
+		}
+		&__switch {
+			margin: -10px 0 10px;
+		}
+	}
+}
+
+.dot {
+	@include width-height(5px);
+	background-color: $colorGreyLight;
+	border-radius: 50%;
+	&_active {
+		@include width-height(9px);
+		background-color: $colorDark;
+		border-radius: 50%;
+	}
 }

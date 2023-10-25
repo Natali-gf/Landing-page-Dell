@@ -10,6 +10,7 @@
 	&__go-link {
 		display: flex;
 		align-items: center;
+		white-space: nowrap;
 		&_icon {
 			margin-left: 20px;
 		}
@@ -21,6 +22,16 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: 64px;
+	}
+	@media screen and (max-width: $sizeScreenLarge) {
+		&__block {
+			display: flex;
+			justify-content: center;
+		}
+		&__list {
+			flex-wrap: wrap;
+			justify-content: center;
+		}
 	}
 }
 

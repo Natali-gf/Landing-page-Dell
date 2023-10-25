@@ -10,6 +10,32 @@
 		position: absolute;
 		margin-right: -86px;
 	}
+	@media screen and (max-width: $sizeScreenLarge) {
+		max-width: 100%;
+		&__image {
+			margin: 120px -240px 0 0;
+		}
+	}
+	@media screen and (max-width: $sizeScreenMiddle) {
+		&__container {
+			flex-direction: column;
+			padding: 0;
+		}
+		&__image {
+			margin: 230px -30px 0 0;
+		}
+	}
+	@media screen and (max-width: $sizeScreenSmall) {
+		padding: 0;
+		&__container {
+			align-items: flex-end;
+		}
+		&__image {
+			rotate: 15deg;
+			margin: 0 20px -100px;
+			height: 244px;
+		}
+	}
 }
 
 .contacts {
@@ -42,7 +68,10 @@
 		@include fontStyle(18px, 24px, 400, $colorGreyDark);
 		margin-bottom: 8px;
 		&::before {
+			content: '';
 			margin-right: 18px;
+			@include width-height(36px);
+			background-size: 36px;
 		}
 	}
 	&__text {
@@ -50,26 +79,65 @@
 		@include fontStyle(22px, 150%);
 		margin-left: 54px;
 	}
+	@media screen and (max-width: $sizeScreenLarge) {
+		padding: 100px;
+	}
+	@media screen and (max-width: $sizeScreenMiddle) {
+		max-width: 100%;
+		border-radius: 0;
+	}
+	@media screen and (max-width: $sizeScreenSmall) {
+		padding: 101px 30px 60px;
+		justify-content: flex-end;
+		&__description {
+			margin: 15px 0 40px;
+		}
+		&__block {
+			&:nth-child(n + 3) {
+				margin-bottom: 30px
+			}
+		}
+		&__subtitle {
+			@include fontStyle(15px, 133%, 400, $colorGreyDark);
+			margin-bottom: 0;
+			&::before {
+				margin-right: 9px;
+			}
+		}
+		&__text {
+			@include fontStyle(18px, 150%);
+			margin-left: 27px;
+		}
+	}
 }
 
 .adress {
 	&::before {
-		content: url('/src/assets/icons/location.svg');
-		@include width-height(38px);
+		background-image: url('/src/assets/icons/location.svg');
 	}
 }
 
 .email {
 	&::before {
-		content: url('/src/assets/icons/mail.svg');
-		@include width-height(36px);
+		content: '';
+		background-image: url('/src/assets/icons/mail.svg');
 	}
 }
 
 .phone {
 	&::before {
-		content: url('/src/assets/icons/phone.svg');
-		@include width-height(36px);
+		content: '';
+		background-image: url('/src/assets/icons/phone.svg');
+	}
+}
+
+@media screen and (max-width: $sizeScreenSmall) {
+	.phone, .email, .adress {
+		&::before {
+			@include width-height(18px);
+			font-size: 18px;
+			background-size: 18px;
+		}
 	}
 }
 
@@ -78,14 +146,29 @@
 	gap: 18px;
 	&__facebook {
 		&::before {
-			content: url('/src/assets/icons/facebook.svg');
-			@include width-height(38px);
+			background-image: url('/src/assets/icons/facebook.svg');
 		}
 	}
 	&__whatsapp {
 		&::before {
-			content: url('/src/assets/icons/whatsapp.svg');
+			background-image: url('/src/assets/icons/whatsapp.svg');
+		}
+	}
+	&__facebook, &__whatsapp {
+		&::before {
+			content: '';
 			@include width-height(38px);
+			background-size: 38px;
+			display: block;
+		}
+	}
+	@media screen and (max-width: $sizeScreenSmall) {
+		gap: 13px;
+		&__facebook, &__whatsapp {
+			&::before {
+				@include width-height(26px);
+				background-size: 26px;
+			}
 		}
 	}
 }
@@ -103,11 +186,27 @@
 		@include fontStyle(16px, 150%, 400, $colorWhite);
 		margin: 18px 0 53px;
 	}
+	@media screen and (max-width: $sizeScreenLarge) {
+
+	}
+	@media screen and (max-width: $sizeScreenMiddle) {
+		max-width: 100%;
+		border-radius: 0;
+	}
+	@media screen and (max-width: $sizeScreenSmall) {
+		padding: 60px 30px;
+		&__description {
+			margin: 15px 0 40px;
+			@include fontStyle(15px, 150%, 400, $colorWhite);
+			white-space: nowrap;
+		}
+	}
 }
 
 .form {
 	display: flex;
 	flex-direction: column;
+	position: relative;
 	&__input {
 		position: relative;
 		@include borderStyle(1.5px solid #F2F2F280, 15px);
@@ -143,6 +242,37 @@
 		background-color: $colorDark;
 		&_icon {
 			margin-right: 12px;
+		}
+	}
+	&__form {
+		margin: auto;
+	}
+	@media screen and (max-width: $sizeScreenSmall) {
+		&__input, &__textarea {
+			margin-bottom: 30px;
+		}
+	}
+}
+
+.error {
+	position: absolute;
+	display: none;
+	align-items: center;
+	box-shadow: $shadow;
+	border-radius: 20px;
+	width: 100%;
+	height: 100px;
+	background-color: $colorBackgroundGray;
+	padding: 20px 40px 20px 20px;
+	margin-top: 50px;
+	z-index: 10;
+	&__button {
+		position: absolute;
+		right: 20px;
+		top: 20px;
+		cursor: pointer;
+		&::before {
+			content: url('/src/assets/icons/close.svg');
 		}
 	}
 }
